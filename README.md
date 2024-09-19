@@ -22,7 +22,7 @@
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/SkyWatch.git
+   git clone https://github.com/findmariammariaa/SkyWatch.git
    ```
 
 2. **Navigate to the Project Directory**:
@@ -41,6 +41,9 @@
 - [Mariam Maria](https://github.com/findmariammariaa) (You)
 - [Pallab Dey](https://github.com/Rusher0077) (Senior)
 
+## **Contributing**
+
+Feel free to contribute to the project! For detailed guidelines, please check the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 ## **License**
 
@@ -53,5 +56,3 @@ For any questions or suggestions, please contact:
 - [Pallab Dey](mailto:pallabdey21@gmail.com)
 
 ---
-
-Let me know if there’s anything else you’d like to update!
