@@ -6,6 +6,12 @@
     font-family: "poppins";
     box-sizing: border-box;
 }
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background: #83838398
+}
 
 body{
     height: 100vh;
@@ -26,7 +32,7 @@ body{
 .weatherIcon{
     background-position: 50% !important;
     background-repeat: no-repeat !important;
-    background-size: contain;
+    background-size: contain !important;
     display: block;
     height: 20%;
     margin: 2rem auto;
@@ -70,6 +76,24 @@ body{
     overflow: auto;
 
 }
+.weather-input .feelslike,
+.weather-input .description,
+.weather-input .date,
+.weather-input .city{
+    padding: 10px 0;
+}
+
+.temparature{
+    font-size: 5rem;
+    text-align: center;
+    display: flex;
+    font-weight: 300;
+}
+.temparature span{
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
 .Hightlight{
     display: grid;
     grid-template-columns: repeat(3,320px);
@@ -77,8 +101,16 @@ body{
     row-gap: 1rem;
     column-gap: 10px;
 }
-.Hightlight div{
-    height: 200px;
+.Forecast{
+    display: grid;
+    grid-template-columns: repeat(4,260px);
+    grid-auto-flow: row;
+    row-gap: 1rem;
+    column-gap: 10px;
+}
+.Hightlight div,
+.Forecast div{
+    height: 150px;
     display: grid;
     align-items: center;
     justify-content: center;
@@ -94,4 +126,15 @@ body{
     align-items: center;
     display: flex;
     gap: 10px;
+}
+
+.forecast-desc{
+    color: #7f7f7f;
+    font-size: 0.8rem;
+    text-align: center;
+    padding-bottom: 5px;
+    font-style:italic;;
+}
+.description i{
+    font-size: 25px;
 }
