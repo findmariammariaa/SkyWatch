@@ -17,7 +17,7 @@ body{
 }
 
 .weather-input{
-    width: 45%;
+    width: 30%;
     position: fixed;
     inset: 0;
     background: #78c1f3;
@@ -53,4 +53,39 @@ body{
     color: 909090;
     cursor: pointer;
     font-size: 22px;
+}
+.weather-output{
+    width: 70%;
+    position: fixed;
+    inset: 0;
+    margin-left: 34%;
+    padding-top: 4rem;
+    background: f6f6f6;
+    overflow: auto;
+
+}
+.Hightlight{
+    display: grid;
+    grid-template-columns: repeat(3,320px);
+    grid-auto-flow: row ;
+    row-gap: 1rem;
+    column-gap: 10px;
+}
+.Hightlight div{
+    height: 200px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #78c1f3;
+    border-radius: 20px;
+    padding: 1rem;
+}
+.Hightlight i{
+    font-size: 45px;
+}
+.sun span{
+    align-items: center;
+    display: flex;
+    gap: 10px;
 }
