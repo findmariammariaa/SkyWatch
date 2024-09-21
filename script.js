@@ -15,10 +15,10 @@ const userLocation = document.getElementById("userLocation"),
     PValue = document.getElementById("PValue"),
     Forecast = document.querySelector(".Forecast");
 
-const apiKey = '';
-const WEATHER_API_ENDPOINT = `https://api.openweathermap.org/data/2.5/weather?appid=${apiKey}&q=`;
-const WEATHER_DATA_ENDPOINT = `https://api.openweathermap.org/data/3.0/onecall?appid=${apiKey}&exclude=minutely&units=metric&`;
-const REVERSE_GEO_ENDPOINT = `https://api.openweathermap.org/geo/1.0/reverse?lat={lat}&lon={lon}&limit=1&appid=${apiKey}`;
+const APIKEY = '64f2301c872493dfd69bc2a5d94d5a70';
+const WEATHER_API_ENDPOINT = `https://api.openweathermap.org/data/2.5/weather?appid=${APIKEY}&q=`;
+const WEATHER_DATA_ENDPOINT = `https://api.openweathermap.org/data/3.0/onecall?appid=${APIKEY}&exclude=minutely&units=metric&`;
+const REVERSE_GEO_ENDPOINT = `https://api.openweathermap.org/geo/1.0/reverse?lat={lat}&lon={lon}&limit=1&appid=${APIKEY}`;
 
 // Listen for the "Enter" key on the input field
 userLocation.addEventListener("keydown", (event) => {
