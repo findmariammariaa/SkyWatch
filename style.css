@@ -76,20 +76,21 @@ body{
     overflow: auto;
 
 }
-.weather-input .feelslike,
+.weather-input .feelsLike,
 .weather-input .description,
 .weather-input .date,
 .weather-input .city{
     padding: 10px 0;
+    font-size: 20px;
 }
 
-.temparature{
+.temperature{
     font-size: 5rem;
     text-align: center;
     display: flex;
     font-weight: 300;
 }
-.temparature span{
+.temperature span{
     font-size: 2rem;
     margin-top: 20px;
 }
@@ -103,14 +104,15 @@ body{
 }
 .Forecast{
     display: grid;
-    grid-template-columns: repeat(4,260px);
+    grid-template-columns: repeat(4,240px);
     grid-auto-flow: row;
     row-gap: 1rem;
     column-gap: 10px;
+    font-size:smaller;
 }
 .Hightlight div,
 .Forecast div{
-    height: 150px;
+    height: 200px;
     display: grid;
     align-items: center;
     justify-content: center;
@@ -120,7 +122,7 @@ body{
     padding: 1rem;
 }
 .Hightlight i{
-    font-size: 45px;
+    font-size: 40px;
 }
 .sun span{
     align-items: center;
@@ -129,11 +131,11 @@ body{
 }
 
 .forecast-desc{
-    color: #7f7f7f;
-    font-size: 0.8rem;
+    color: white;
+    font-size: .9rem;
     text-align: center;
     padding-bottom: 5px;
-    font-style:italic;;
+    font-style:italic;
 }
 .description i{
     font-size: 25px;
