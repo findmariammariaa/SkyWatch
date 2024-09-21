@@ -107,6 +107,7 @@ body {
 .Hightlight {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(3, 1fr); /* Maximum of 3 columns */
     gap: 1rem;
 
 }
@@ -114,12 +115,13 @@ body {
 .Forecast {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(4, 1fr); /* Maximum of 4 columns */
     gap: 1rem;
     font-size: smaller;
 }
 
 .Hightlight div,
-.Forecast div {
+.Forecast div{
     height: 200px;
     display: grid;
     align-items: center;
