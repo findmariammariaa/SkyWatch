@@ -1,185 +1,231 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins";
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #83838398;
+  background: #83838398;
 }
 
 body {
-    height: 100vh;
-    display: flex;  /* Allow flexbox layout */
-    flex-direction: column;  /* Arrange children vertically */
+  background: #f6f6f6;
+  line-height: 1.5;
 }
 
+/* ----------- MAIN LAYOUT ----------- */
 .container {
-    display: flex;
-    flex-direction: row; /* Keep input and output side by side */
-    align-items: flex-start; /* Align items to the start */
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100vh; /* allow scroll if needed */
 }
 
+/* ----------- LEFT SIDE (Fixed) ----------- */
 .weather-input {
-    width: 30%; /* Keep it fixed for larger screens */
-    background: #78c1f3;
-    padding: 1rem 2.5rem;
-    position: fixed; /* Keeps it fixed for larger screens */
-    height: 100%; /* Fill the height */
+  width: 30%;
+  background: #78c1f3;
+  padding: 1rem 2.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow: hidden; /* no scroll here */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.weatherIcon {
-    background-position: 50% !important;
-    background-repeat: no-repeat !important;
-    background-size: contain !important;
-    display: block;
-    height: 20%;
-    margin: 2rem auto;
-}
-
+/* INPUT GROUP */
 .input-group {
-    position: relative; 
-    display: flex;
-    align-items: center;
-    margin: 3rem 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+  gap: 10px;
+  width: 100%;
 }
 
 .input-group input {
-    background: #f8f8f8;
-    text-transform: capitalize;
-    padding: 1rem;
-    font-size: 16px;
-    border-radius: 6px;
-    width: 100%; /* Full width */
-    outline: none;
-    border: none;
-    padding-left: 4rem;
+  background: #f8f8f8;
+  text-transform: capitalize;
+  padding: 1rem;
+  font-size: 16px;
+  border-radius: 6px;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding-left: 3rem;
 }
 
 .input-group .fa-search {
-    position: absolute;
-    left: 1rem; 
-    color: #909090;
-    cursor: pointer;
-    font-size: 22px;
+  position: absolute;
+  left: 1rem;
+  color: #909090;
+  cursor: pointer;
+  font-size: 20px;
 }
 
-.weather-output {
-    width: 70%;
-    position: fixed; /* Keeps it fixed for larger screens */
-    inset: 0;
-    margin-left: 30%; /* Adjust to match input width */
-    padding-top: 2.5rem;
-    background: #f6f6f6;
-    overflow: auto;
-    height: 100%; /* Fill the height */
-    padding: 1rem;
-    padding-top: 2.5rem;
+.input-group select {
+  background: #f8f8f8;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+/* ICON & TEMP */
+.weatherIcon {
+  background-position: 50% !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  height: 150px;
+  margin: 2rem auto;
+  display: block;
+}
+
+.temperature {
+  font-size: 4.5rem;
+  text-align: center;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.temperature span {
+  font-size: 1.8rem;
 }
 
 .weather-input .feelsLike,
 .weather-input .description,
 .weather-input .date,
 .weather-input .city {
-    padding: 10px 0;
+  text-align: center;
+  padding: 8px 0;
 }
 
-.temperature {
-    font-size: 5rem;
-    text-align: center;
-    display: flex;
-    font-weight: 300;
+/* ----------- RIGHT SIDE (Scrollable) ----------- */
+.weather-output {
+  width: 70%;
+  margin-left: 30%;
+  padding: 2rem;
+  background: #f6f6f6;
+  height: 100vh;
+  overflow-y: auto; /* scroll only for right panel */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.temperature span {
-    font-size: 2rem;
-    margin-top: 20px;
-}
-
+/* ----------- HIGHLIGHT & FORECAST CARDS ----------- */
 .Hightlight {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-    grid-template-columns: repeat(3, 1fr); /* Maximum of 3 columns */
-    gap: 1rem;
-
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+  gap: 1rem;
 }
 
 .Forecast {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
-    grid-template-columns: repeat(4, 1fr); /* Maximum of 4 columns */
-    gap: 1rem;
-    font-size: smaller;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+  gap: 1rem;
+  font-size: smaller;
 }
 
 .Hightlight div,
-.Forecast div{
-    height: 200px;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: #78c1f3;
-    border-radius: 20px;
-    padding: 1rem;
-    margin: 4px;
+.Forecast div {
+  min-height: 200px; /* bigger cards to store all info */
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #78c1f3;
+  border-radius: 20px;
+  padding: 1rem;
 }
 
 .Hightlight i {
-    font-size: 40px;
+  font-size: 40px;
 }
 
 .sun span {
-    align-items: center;
-    display: flex;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
 }
 
 .forecast-desc {
-    color: white;
-    font-size: .9rem;
-    text-align: center;
-    padding-bottom: 5px;
-    font-style: italic;
+  color: white;
+  font-size: 0.9rem;
+  text-align: center;
+  padding-bottom: 5px;
+  font-style: italic;
 }
 
 .description i {
-    font-size: 25px;
+  font-size: 25px;
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    .weather-input {
-        width: 100%; /* Full width on smaller screens */
-        position: relative; /* Remove fixed position */
-    }
+/* ----------- RESPONSIVENESS ----------- */
 
-    .weather-output {
-        margin-left: 0; /* Remove margin on smaller screens */
-        width: 100%; /* Full width on smaller screens */
-        position: relative; /* Remove fixed position */
-    }
+/* Medium devices / tablets */
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+  }
 
-    .temperature {
-        font-size: 4rem; /* Adjust font size */
-    }
+  .weather-input,
+  .weather-output {
+    width: 100%;
+    margin-left: 0;
+    height: auto;
+    position: relative; /* remove fixed */
+    overflow: visible;
+  }
+
+  .temperature {
+    font-size: 4rem;
+  }
+
+  .Hightlight {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+  }
+
+  .Forecast {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+  }
 }
 
-@media (max-width: 480px) {
-    .temperature {
-        font-size: 3rem; /* Further adjust font size */
-    }
+/* Small devices / phones */
+@media (max-width: 600px) {
 
-    .Hightlight div,
-    .Forecast div {
-        height: auto; /* Allow height to adjust */
-    }
+  .input-group input {
+    font-size: 15px;
+    padding-left: 2rem;
+  }
+
+  .temperature {
+    font-size: 3rem;
+  }
+
+  .Hightlight div,
+  .Forecast div {
+    min-height: auto; /* let content decide height */
+    padding: 1.2rem;
+  }
+
+  .weatherIcon {
+    height: 100px;
+    margin: 1rem 0;
+  }
 }
